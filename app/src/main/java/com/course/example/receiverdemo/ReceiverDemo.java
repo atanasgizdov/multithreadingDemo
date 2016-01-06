@@ -20,7 +20,8 @@ import java.text.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class ReceiverDemo extends Activity {
     EditText txtMsg;
@@ -81,7 +82,7 @@ public class ReceiverDemo extends Activity {
 
     
 	//////////////////////////////////////////////////////////////////////
-	// local RECEIVER
+	// local RECEIVER inner class
 	public class MyMainLocalReceiver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context localContext, Intent callerIntent) {
