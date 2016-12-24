@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
-
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:17'
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         applicationId "com.course.example.receiverdemo"
         minSdkVersion 17
-        targetSdkVersion 17
+        targetSdkVersion 25
     }
 
     buildTypes {
@@ -16,4 +15,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+dependencies {
 }
