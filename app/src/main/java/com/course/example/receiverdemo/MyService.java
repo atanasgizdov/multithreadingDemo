@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class MyService extends Service {
 	boolean isRunning = true;
 	String tag = "Dynamic Receiver";
@@ -28,9 +31,13 @@ public class MyService extends Service {
 		// we place the slow work of the service in its own
 		// thread so the response we send our caller who ran
 		// "startService(...)" gets a quick OK.
-		Thread triggerService = new Thread(background);
-		triggerService.start();
+		Thread thread1 = new Thread(background);
+		Thread thread2 = new Thread(background);
+		thread1.start();
+		thread2.start();
 		return Service.START_STICKY;
+
+
 	}// onStart
 
 	@Override
@@ -41,28 +48,46 @@ public class MyService extends Service {
 	}// onDestroy
 
 	//background thread
-	Runnable background = new Runnable() {
-		long startingTime = System.currentTimeMillis();
-		long tics = 0;
+	Thread background = new Thread (new Runnable () {
 
 		public void run() {
-			for (int i = 0; (i < 120) & isRunning; i++) { 
+			do {
 				try {
+					Thread.sleep(1000);
 					// fake that you are very busy here
-					tics = System.currentTimeMillis() - startingTime;
+					int random = randomNumber();
 					Intent myObserverSender = new Intent(
 							"Bentley.action.GOSERVICE");
-					String msg = i + " value: " + tics;
-					myObserverSender.putExtra("serviceData", msg);
+					//string for log
+					String msg = "Found Number " + random + " on thread named:" + Thread.currentThread().getName() + "";
+					//array to send
+					ArrayList<String> msgToSend = new ArrayList<String>();
+					msgToSend.add(Thread.currentThread().getName());
+					msgToSend.add(random + "");
+
+;					myObserverSender.putExtra("randomNumber", msgToSend);
+					//write to log
+					Log.e (tag, msg + " -receiving data "
+					);
+					//send broadcast
 					sendBroadcast(myObserverSender);
-					Thread.sleep(1000); 
+
 
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}// for
+			}
+			while (isRunning);
 
 		}// run
-	};
+	});
 
+
+
+	//method to generate a random 4-digit number
+	public int randomNumber (){
+		Random random = new Random();
+		int n = random.nextInt(9999)+ 1;
+		return n;
+	}
 }

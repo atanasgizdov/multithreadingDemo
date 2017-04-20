@@ -9,7 +9,8 @@
     android:id="@+id/widget32"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <EditText
         android:id="@+id/txtMsg"
@@ -21,6 +22,13 @@
         android:id="@+id/btnStopService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stop Service" />
+        android:text="Stop Search" />
+
+    <ImageView
+        android:id="@+id/intro_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="347dp"
+        android:src="@drawable/bentley" />
+
 </LinearLayout>
     </ScrollView>

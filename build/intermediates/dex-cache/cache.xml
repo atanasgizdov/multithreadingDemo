@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nasko\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Nasko\AndroidStudioProjects\21-ReceiverDemo\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_5e7f4530ceb5985703ea07c5ac76121067d8b5f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nasko\AndroidStudioProjects\21-ReceiverDemo\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Nasko\AndroidStudioProjects\21-ReceiverDemo\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_9a746e1f3957ba74eeaa11db877c217f56af3762.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nasko\AndroidStudioProjects\21-ReceiverDemo\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Nasko\AndroidStudioProjects\21-ReceiverDemo\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_646ddcb9c1dad82ac98a9ce17b3118a780b852a2.jar" />
+    </item>
+
+</items>

@@ -6,7 +6,13 @@
 
     <uses-sdk
         android:minSdkVersion="17"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
 
     <application
         android:icon="@drawable/icon"
@@ -21,8 +27,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.course.example.receiverdemo.MyService" >
-        </service>
+        <service android:name="com.course.example.receiverdemo.MyService" />
     </application>
 
 </manifest>
